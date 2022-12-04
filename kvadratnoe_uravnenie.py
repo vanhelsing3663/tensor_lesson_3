@@ -12,7 +12,7 @@ print(f"Дискриминант D = {discr}")
 if discr > 0:
     x1 = (-b + math.sqrt(discr)) / (2 * a)
     x2 = (-b - math.sqrt(discr)) / (2 * a)
-    print("x1 = %.2f \nx2 = %.2f" % (x1, x2))
+    print(f"x1 = {x1} \nx2 = {x2}")
 elif discr == 0:
     x = -b / (2 * a)
     print(f"x = {x}")
