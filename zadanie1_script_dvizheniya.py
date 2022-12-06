@@ -1,4 +1,3 @@
-import turtle
 enter_where_to_go_man = input('Введите куда двигаться персонажу\n1)Влево\n'
                               '2)Вправо\n'
                               '3)Вверх\n'
