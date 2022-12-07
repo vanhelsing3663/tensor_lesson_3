@@ -1,30 +1,42 @@
-enter_where_to_go_man = input('Введите куда двигаться персонажу\n1)Влево\n'
-                              '2)Вправо\n'
-                              '3)Вверх\n'
-                              '4)Вниз\n'
-                              '5)Для остановки скрипта введите:СТОП\n'
-                              'Вводите куда двигаться персонажу : ')
+traffic_information = """Выбор движения персонажа
+1 - вперед, 2 - назад, 3 - вправо, 4 - влево
+стоп - выход\n"""
+man_steps = "Введите целое не отрицательное число : "
+x = y = 0
 
-x = 0
-y = 0
-while True:
-    if enter_where_to_go_man == 'СТОП':
-        break
-    enter_the_number_of_steps = int(input("Введите количество шагов: "))
-    if enter_where_to_go_man == 'влево':
-        x -= enter_the_number_of_steps
-        print(x, y)
-    elif enter_where_to_go_man == 'вправо':
-        x += enter_the_number_of_steps
-        print(x, y)
-    elif enter_where_to_go_man == 'вверх':
-        y += enter_the_number_of_steps
-        print(x, y)
-    elif enter_where_to_go_man == 'вниз':
-        y -= enter_the_number_of_steps
-        print(x, y)
+
+def move_human(x):
+    '''
+    Функция которая делает проверку числа
+    :param x: целое число
+    :return: либо кол-во шагов или 'Число < 0 '
+    '''
+    step = int(input(x))
+    if step >= 0:
+        return step
     else:
-        raise ValueError('Введена некоректная команда')
-    enter_where_to_go_man = input('Вводите куда двигаться персонажу : ')
+        print('Число < 0')
+        return 0
 
 
+while True:
+    err = False
+    print(f'Позиция человека: {x, y}')
+    enter_where_to_go_man = input(f'{traffic_information}Введите число : ')
+    match enter_where_to_go_man:
+        case '1':
+            x += move_human(f'Вперед! {man_steps}')
+        case '2':
+            x -= move_human(f'Назад! {man_steps}')
+        case '3':
+            y += move_human(f'Вправо! {man_steps}')
+        case '4':
+            y -= move_human(f'Влево! {man_steps}')
+        case 'стоп':
+            print('Движение окончено')
+            break
+        case _:
+            err = True
+            print('Введите корректные данные')
+    if not err:
+        print(f'Персонаж остановился в точке : {x, y}')
