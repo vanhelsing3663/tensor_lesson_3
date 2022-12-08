@@ -12,6 +12,4 @@ print(f"Дискриминант D = {discr}")
 # На комплексной оси всегда есть корни
 x1 = (-b + (discr ** 0.5)) / (2 * a)
 x2 = (-b - (discr ** 0.5)) / (2 * a)
-print(f"x1 =({round(x1.real, 10)}, {round(x1.imag, 10)}) \nx2 =({round(x2.real, 10)}, {round(x2.imag, 10)})")
-
-
+print(f"x1 = ({round(x1.real, 10)}, {round(x1.imag, 10)}) \nx2 = ({round(x2.real, 10)}, {round(x2.imag, 10)})")

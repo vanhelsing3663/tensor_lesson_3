@@ -16,6 +16,6 @@ if discr > 0:
     print(f"x1 = {x1} \nx2 = {x2}")
 elif discr == 0:
     x = -b / (2 * a)
-    print(f"x = {x}")
+    print(f"x  = {x}")
 else:
     print("Корней нет")
